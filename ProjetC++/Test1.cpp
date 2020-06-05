@@ -46,6 +46,7 @@ int main() {
     cout << "u - w = ";
     z2.affiche();
 
-
+    Vecteur p(3);
+    p.affiche();
 
 }

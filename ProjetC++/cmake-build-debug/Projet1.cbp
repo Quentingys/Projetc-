@@ -80,7 +80,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/quentingyselinck/CLionProjects/ProjetC++/main.cpp">
+		<Unit filename="/Users/quentingyselinck/CLionProjects/ProjetC++/Test1.cpp">
 			<Option target="Projet1"/>
 		</Unit>
 		<Unit filename="/Users/quentingyselinck/CLionProjects/ProjetC++/CMakeLists.txt">

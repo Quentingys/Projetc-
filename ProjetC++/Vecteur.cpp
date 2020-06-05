@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void Vecteur :: affiche() const {
+void Vecteur::affiche() const {
     cout << "(";
     for (int i = 0; i < dim; i++){
         cout << tab[i] << ";";
@@ -17,9 +17,14 @@ void Vecteur :: affiche() const {
  // il serait bien d'afficher le nom des variable ici, pe faudra t il rajouter un attribu name...
 
 }
+//Constructeur par défaut
+Vecteur::Vecteur() {
+    dim = 0;
+
+}
 
 //Constructeur par taille : vecteur avec des 0
-Vecteur :: Vecteur(int taille){
+Vecteur::Vecteur(int taille){
     if (taille <= 0) {
         cout << "Taille négative";
     }
@@ -34,7 +39,7 @@ Vecteur :: Vecteur(int taille){
     }
 }
 
-Vecteur :: Vecteur(float *t, int taille){
+Vecteur::Vecteur(float *t, int taille){
     dim = taille;
     if (dim>0){
         tab = new float [dim];
@@ -44,15 +49,15 @@ Vecteur :: Vecteur(float *t, int taille){
     }
 }
 
-Vecteur :: ~Vecteur()
+Vecteur::~Vecteur()
 {
     delete [] tab;
 
 }
 
 
-//constructeur de recopie (pas compris la diff avec l'autre constructeur)
-Vecteur :: Vecteur(const Vecteur& v){
+
+Vecteur::Vecteur(const Vecteur& v){
     dim = v.dim;
     if (dim > 0) {
         tab = new float [dim];
@@ -65,9 +70,11 @@ Vecteur :: Vecteur(const Vecteur& v){
 }
 
 //Opérateur pr aller chercher la i-eme composante d'un vecteur
-float& Vecteur::operator[](int i) const {
+float& Vecteur::operator[](int i)const {
     if (i<0 || i >= dim ){
-        cout<< " La recherche ne correspond pas au vecteur, indice : "<< i << endl;
+        cout << " La recherche ne correspond pas au vecteur, indice :" << i << endl;
+        return tab[0]; // Sinon warning car pas de retour si la condition n'est pas vérifiée
+
  // encore pr empêcher warning, mais attention si on se trompe on nous retourne un 0 pb ici trouver qqch a return pr plus warning
     }
     else {
@@ -77,13 +84,13 @@ float& Vecteur::operator[](int i) const {
 
 //opérateur d'affectation par = surdéfinition opérateur d'affectation
 Vecteur& Vecteur::operator=(const Vecteur& v){
-    float* tab1 = new float[v.dim];
-    for (int i=0; i< v.dim; i++){
-        tab1[i]=v.tab[i];
+    if (this != &v){
+        dim = v.dim;
+        tab = new float [dim];
+        for (int i = 0; i<dim;i++){
+            tab[i] = v.tab[i];
+        }
     }
-    swap(this->tab,tab1);
-    this->dim = v.dim;
-    delete[] tab1;
     return *this;
 }
 
@@ -123,7 +130,7 @@ Vecteur Vecteur::operator-(const Vecteur& v1) {
 //def de subvec
 Vecteur Vecteur::subvec(int i, int j){
     int taille = this->dim;
-    if (i>j || j>=taille){
+    if (i>j || j>taille){
         cout << "On ne peut pas définir de sousvecteur avec ces paramètres";
         Vecteur v(1);
         return v;
@@ -131,8 +138,8 @@ Vecteur Vecteur::subvec(int i, int j){
     else{
         int taille1 = j-i + 1;
         Vecteur v(taille1);
-        for (int k = i; k <= j; k++){
-            v[k-i] = tab[k];
+        for (int k = i -1; k < j; k++){
+            v[k-i+1] = tab[k];
         }
         return v;
     }
@@ -148,6 +155,7 @@ int Vecteur::taille() const{
 float dot(const Vecteur& v1, const Vecteur& v2){
     if (v1.taille() != v2.taille()){
         cout << "Les vecteurs n'ont pas la meme taille, le produit scalaire est impossible";
+        return 0;
         //encore un pb de non retour, comment faire avec les float ?...
     }
     else {
@@ -173,3 +181,4 @@ Vecteur operator* (float a, const Vecteur& v){
     }
     return v1;
 }
+

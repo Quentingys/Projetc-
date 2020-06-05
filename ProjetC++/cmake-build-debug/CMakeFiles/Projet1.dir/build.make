@@ -57,27 +57,27 @@ include CMakeFiles/Projet1.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Projet1.dir/flags.make
 
-CMakeFiles/Projet1.dir/main.cpp.o: CMakeFiles/Projet1.dir/flags.make
-CMakeFiles/Projet1.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/quentingyselinck/CLionProjects/ProjetC++/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Projet1.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projet1.dir/main.cpp.o -c /Users/quentingyselinck/CLionProjects/ProjetC++/main.cpp
+CMakeFiles/Projet1.dir/Test1.cpp.o: CMakeFiles/Projet1.dir/flags.make
+CMakeFiles/Projet1.dir/Test1.cpp.o: ../Test1.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/quentingyselinck/CLionProjects/ProjetC++/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Projet1.dir/Test1.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projet1.dir/Test1.cpp.o -c /Users/quentingyselinck/CLionProjects/ProjetC++/Test1.cpp
 
-CMakeFiles/Projet1.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projet1.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/quentingyselinck/CLionProjects/ProjetC++/main.cpp > CMakeFiles/Projet1.dir/main.cpp.i
+CMakeFiles/Projet1.dir/Test1.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projet1.dir/Test1.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/quentingyselinck/CLionProjects/ProjetC++/Test1.cpp > CMakeFiles/Projet1.dir/Test1.cpp.i
 
-CMakeFiles/Projet1.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projet1.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/quentingyselinck/CLionProjects/ProjetC++/main.cpp -o CMakeFiles/Projet1.dir/main.cpp.s
+CMakeFiles/Projet1.dir/Test1.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projet1.dir/Test1.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/quentingyselinck/CLionProjects/ProjetC++/Test1.cpp -o CMakeFiles/Projet1.dir/Test1.cpp.s
 
 # Object files for target Projet1
 Projet1_OBJECTS = \
-"CMakeFiles/Projet1.dir/main.cpp.o"
+"CMakeFiles/Projet1.dir/Test1.cpp.o"
 
 # External object files for target Projet1
 Projet1_EXTERNAL_OBJECTS =
 
-Projet1: CMakeFiles/Projet1.dir/main.cpp.o
+Projet1: CMakeFiles/Projet1.dir/Test1.cpp.o
 Projet1: CMakeFiles/Projet1.dir/build.make
 Projet1: CMakeFiles/Projet1.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/quentingyselinck/CLionProjects/ProjetC++/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Projet1"
